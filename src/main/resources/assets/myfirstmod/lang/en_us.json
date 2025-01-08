@@ -1,5 +1,20 @@
 {
-  "itemGroup.myfirstmod": "Example Mod Tab",
-  "block.myfirstmod.example_block": "Example Block",
-  "item.myfirstmod.example_item": "Example Item"
+  "item.myfirstmod.coke": "Coke",
+  "item.myfirstmod.limestone_piece": "Limestone Piece",
+
+  "block.myfirstmod.block_of_coke": "Block Of Coke",
+  "block.myfirstmod.limestone": "Limestone",
+
+  "creativetab.myfirstmod.my_first_mod": "My First Mod",
+  "creativetab.myfirstmod.my_first_mod_blocks": "My First Mod Blocks",
+
+  "advancement.myfirstmod.get_coke.title": "Refined Fuel",
+  "advancement.myfirstmod.get_coke.description": "Get Coke from Blasting Coal",
+
+  "advancement.myfirstmod.industrialisation.title": "Industrialisation",
+  "advancement.myfirstmod.industrialisation.description": "Start Industrialising Your World",
+
+  "advancement.myfirstmod.get_block_of_coke.title": "Superfuel",
+  "advancement.myfirstmod.get_block_of_coke.description": "Get a Block of Coke"
+
 }

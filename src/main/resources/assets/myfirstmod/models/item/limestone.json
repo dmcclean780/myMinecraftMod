@@ -1,0 +1,6 @@
+{
+    "parent": "myfirstmod:block/cube_all",
+    "textures": {
+        "all": "myfirstmod:block/limestone"
+    }
+}

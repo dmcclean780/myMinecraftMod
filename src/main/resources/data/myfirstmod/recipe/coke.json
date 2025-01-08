@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+      "myfirstmod:block_of_coke"
+    ],
+    "result": {
+      "count": 9,
+      "id": "myfirstmod:coke"
+    }
+  }
