@@ -3,7 +3,6 @@ package com.dmcclean780.myfirstmod.blocks;
 import java.util.function.Function;
 
 import com.dmcclean780.myfirstmod.MyFirstMod;
-import com.dmcclean780.myfirstmod.fluid.ModFluids;
 import com.dmcclean780.myfirstmod.items.AllItems;
 
 import net.minecraft.core.registries.Registries;
