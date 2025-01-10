@@ -1,0 +1,11 @@
+// 1.21.1	2025-01-09T11:25:53.299465	Recipes
+4a8e2b1de27337c61bec3c8660bc772ebf2d2c97 data/myfirstmod/advancement/recipes/misc/block_of_coke.json
+1c72c30bd78c5ab485860b04e04a2a0490022507 data/myfirstmod/advancement/recipes/misc/block_of_coke_from_blasting_coal_block.json
+e27c734466ed98093899251e1b8d0a20c2b6a868 data/myfirstmod/advancement/recipes/misc/coke.json
+c813ab2ae58202ba2992e1a8027ec5db1d894002 data/myfirstmod/advancement/recipes/misc/coke_from_blasting_coal.json
+9dde93a04af39b651da0824036745a81bbef3d1a data/myfirstmod/advancement/recipes/misc/limestone.json
+5a2a4dbf661356429a4193bccfdf47f1a248ca22 data/myfirstmod/recipe/block_of_coke.json
+6907bf80bdbaf16c5f3250f59d6794a21f041d50 data/myfirstmod/recipe/block_of_coke_from_blasting_coal_block.json
+be7f20c5070511a37f5c2f414c29e934bfbb7993 data/myfirstmod/recipe/coke.json
+dad6738e757af0823367edb68131396a6f3f77a9 data/myfirstmod/recipe/coke_from_blasting_coal.json
+9452ead1eb3f610cdd8689bdc932a92972be2694 data/myfirstmod/recipe/limestone.json
