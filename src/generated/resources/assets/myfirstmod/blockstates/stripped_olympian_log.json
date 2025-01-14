@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "myfirstmod:block/stripped_olympian_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "myfirstmod:block/stripped_olympian_log"
+    },
+    "axis=z": {
+      "model": "myfirstmod:block/stripped_olympian_log_horizontal",
+      "x": 90
+    }
+  }
+}

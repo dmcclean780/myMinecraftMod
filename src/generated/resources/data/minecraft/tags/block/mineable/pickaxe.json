@@ -1,6 +1,9 @@
 {
   "values": [
-    "myfirstmod:block_of_coke",
-    "myfirstmod:limestone"
+    "myfirstmod:tin_stone_ore",
+    "myfirstmod:tin_deepslate_ore",
+    "myfirstmod:limestone",
+    "myfirstmod:tin_block",
+    "myfirstmod:raw_tin_block"
   ]
 }

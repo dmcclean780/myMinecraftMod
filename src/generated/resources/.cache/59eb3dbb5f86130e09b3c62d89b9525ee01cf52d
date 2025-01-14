@@ -1,3 +1,13 @@
-// 1.21.1	2025-01-09T11:22:41.492418	Loot Tables
-842c3f8525c625dcef56905182f580acb6e265e0 data/myfirstmod/loot_table/blocks/block_of_coke.json
+// 1.21.1	2025-01-10T21:47:36.433867	Loot Tables
 6e5326303fbff14ffcb787adfefaec3feddd1dfe data/myfirstmod/loot_table/blocks/limestone.json
+cda932b24df427f7b9987e3b037a23e9307a8523 data/myfirstmod/loot_table/blocks/olympian_leaves.json
+b1b2cdcfd7409a7cdb037b439f4c21051d8c6187 data/myfirstmod/loot_table/blocks/olympian_log.json
+6b1e9acecabc61b4395cee9ed1969fd3d07f7cf3 data/myfirstmod/loot_table/blocks/olympian_planks.json
+e1e429495fcdc967e4ceaa84fd951b87c9eaa93b data/myfirstmod/loot_table/blocks/olympian_sapling.json
+c8fa7dcc333979d76ac7a802a657aa14c798afae data/myfirstmod/loot_table/blocks/olympian_wood.json
+75dff9984be3052dbffc8bc1a42d50eabe1a2529 data/myfirstmod/loot_table/blocks/raw_tin_block.json
+97ec86d0402e0987a52c208ac33670a148a4c430 data/myfirstmod/loot_table/blocks/stripped_olympian_log.json
+317f63ea4a93a84b65f98c34d1cb3cd11076bc5d data/myfirstmod/loot_table/blocks/stripped_olympian_wood.json
+91a69e32030a81820dfe82f944f99e54322750fe data/myfirstmod/loot_table/blocks/tin_block.json
+e35b4b6ab74c7c36334b88bb2ac06ca409b444eb data/myfirstmod/loot_table/blocks/tin_deepslate_ore.json
+6e20a473a4e38d5f9f4de63d274af0017ddfbd0d data/myfirstmod/loot_table/blocks/tin_stone_ore.json

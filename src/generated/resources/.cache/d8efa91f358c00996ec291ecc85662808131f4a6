@@ -1,3 +1,4 @@
-// 1.21.1	2025-01-09T11:22:41.492738	Tags for minecraft:block mod id myfirstmod
-71a90e6ab549f2405f52d9557f9e2adc5f05f58f data/minecraft/tags/block/mineable/pickaxe.json
-0876a5c4b0f886b77327cb8c8854cb6a4d337ca6 data/minecraft/tags/block/needs_stone_tool.json
+// 1.21.1	2025-01-10T21:47:36.43406	Tags for minecraft:block mod id myfirstmod
+dbd304bee1955eaebaae5b27bb27ceb96aaa9c76 data/minecraft/tags/block/logs_that_burn.json
+7c9333093a9d1348a45e043cc320f732da06b092 data/minecraft/tags/block/mineable/pickaxe.json
+40e390fb8c41d78177f1abcd0c868f913bf1d96d data/minecraft/tags/block/needs_stone_tool.json

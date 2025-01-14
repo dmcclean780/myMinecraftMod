@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_tin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "myfirstmod:raw_tin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "myfirstmod:raw_tin_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_tin"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "myfirstmod:raw_tin_block"
+    ]
+  }
+}

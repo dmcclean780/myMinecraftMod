@@ -1,7 +1,5 @@
 package com.dmcclean780.myfirstmod.datagen;
 
-import com.dmcclean780.myfirstmod.blocks.AllBlocks;
-import com.dmcclean780.myfirstmod.items.AllItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -10,6 +8,8 @@ import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.dmcclean780.myfirstmod.item.ModItems;
+
 public class ModDataMapProvider extends DataMapProvider {
     protected ModDataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
@@ -17,8 +17,6 @@ public class ModDataMapProvider extends DataMapProvider {
 
     @Override
     protected void gather() {
-        this.builder(NeoForgeDataMaps.FURNACE_FUELS)
-                .add(AllItems.COKE.getId(), new FurnaceFuel(16000), false)
-                .add(AllBlocks.BLOCK_OF_COKE.getId(), new FurnaceFuel(16000), false);
+                
     }
 }

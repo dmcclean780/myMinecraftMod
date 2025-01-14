@@ -1,13 +1,12 @@
 package com.dmcclean780.myfirstmod.datagen;
 
 import com.dmcclean780.myfirstmod.MyFirstMod;
-import com.dmcclean780.myfirstmod.blocks.AllBlocks;
-import com.dmcclean780.myfirstmod.items.AllItems;
+import com.dmcclean780.myfirstmod.block.ModBlocks;
+import com.dmcclean780.myfirstmod.item.ModItems;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -23,29 +22,39 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AllBlocks.BLOCK_OF_COKE.get())
-                .pattern("BBB")
-                .pattern("BBB")
-                .pattern("BBB")
-                .define('B', AllItems.COKE.get())
-                .unlockedBy("has_coke", has(AllItems.COKE)).save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AllItems.COKE.get(), 9)
-                .requires(AllBlocks.BLOCK_OF_COKE)
-                .unlockedBy("has_block_of_coke", has(AllBlocks.BLOCK_OF_COKE)).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AllBlocks.LIMESTONE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LIMESTONE.get())
                 .pattern("BB")
                 .pattern("BB")
-                .define('B', AllItems.LIMESTONE_PIECE.get())
-                .unlockedBy("has_limestone_piece", has(AllItems.LIMESTONE_PIECE)).save(recipeOutput);
+                .define('B', ModItems.LIMESTONE_PIECE.get())
+                .unlockedBy("has_limestone_piece", has(ModItems.LIMESTONE_PIECE)).save(recipeOutput);
 
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_TIN_BLOCK.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('B', ModItems.RAW_TIN)
+                .unlockedBy("has_raw_tin", has(ModItems.RAW_TIN)).save(recipeOutput);
         
-        List<ItemLike> COKE_INGREDIENTS = List.of(Items.COAL);
-        oreBlasting(recipeOutput, COKE_INGREDIENTS, RecipeCategory.MISC, AllItems.COKE.get(), 0.25f, 1000, "coke");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TIN, 9)
+                .requires(ModBlocks.RAW_TIN_BLOCK.get())
+                .unlockedBy("has_raw_tin_block", has(ModBlocks.RAW_TIN_BLOCK.get())).save(recipeOutput);
 
-        List<ItemLike> COKE_BLOCK_INGREDIENTS = List.of(Items.COAL_BLOCK);
-        oreBlasting(recipeOutput, COKE_BLOCK_INGREDIENTS, RecipeCategory.MISC, AllBlocks.BLOCK_OF_COKE.get(), 0.25f, 1000, "coke");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('B', ModItems.TIN_INGOT)
+                .unlockedBy("has_tin_ingot", has(ModItems.TIN_INGOT)).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TIN_INGOT, 9)
+                .requires(ModBlocks.TIN_BLOCK.get())
+                .unlockedBy("has_tin_block", has(ModBlocks.TIN_BLOCK.get())).save(recipeOutput);
+
+        List<ItemLike> tin_smelting_items = List.of(ModBlocks.TIN_STONE_ORE.get(), ModBlocks.TIN_DEEPSLATE_ORE.get(), ModItems.RAW_TIN.get());
+        oreSmelting(recipeOutput, tin_smelting_items, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.25f, 200, "tin");
+        oreBlasting(recipeOutput, tin_smelting_items, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.25f, 100, "tin");
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

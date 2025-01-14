@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "myfirstmod:block/tin_deepslate_ore"
+  }
+}

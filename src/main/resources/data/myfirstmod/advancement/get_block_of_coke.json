@@ -1,0 +1,26 @@
+{
+    "parent": "myfirstmod:industrialisation",
+    "display": {
+      "icon": {
+        "id": "myfirstmod:block_of_coke"
+      },
+      "title": {
+        "translate": "advancement.myfirstmod.get_block_of_coke.title"
+      },
+      "description": {
+        "translate": "advancement.myfirstmod.get_block_of_coke.description"
+      },
+      "frame": "task",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "criteria": {
+      "acquire_block_of_coke": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "myfirstmod:block_of_coke"
+        }
+      }
+    }
+  }

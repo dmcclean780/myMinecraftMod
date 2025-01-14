@@ -1,9 +1,22 @@
 {
   "item.myfirstmod.coke": "Coke",
   "item.myfirstmod.limestone_piece": "Limestone Piece",
+  "item.myfirstmod.tin_ingot": "Tin Ingot",
+  "item.myfirstmod.raw_tin": "Raw Tin",
 
   "block.myfirstmod.block_of_coke": "Block Of Coke",
   "block.myfirstmod.limestone": "Limestone",
+  "block.myfirstmod.tin_stone_ore": "Tin Ore",
+  "block.myfirstmod.tin_deepslate_ore": "Deepslate Tin Ore",
+  "block.myfirstmod.tin_block": "Tin Block",
+  "block.myfirstmod.raw_tin_block": "Raw Tin Block",
+  "block.myfirstmod.olympian_log": "Olympian Log",
+  "block.myfirstmod.olympian_planks": "Olympian Planks",
+  "block.myfirstmod.olympian_leaves": "Olympian Leaves",
+  "block.myfirstmod.olympian_sapling": "Olympian Sapling",
+  "block.myfirstmod.olympian_wood": "Olympian Wood",
+  "block.myfirstmod.stripped_olympian_log": "Stripped Olympian Log",
+  "block.myfirstmod.stripped_olympian_wood": "Stripped Olympian Wood",
 
   "creativetab.myfirstmod.my_first_mod": "My First Mod",
   "creativetab.myfirstmod.my_first_mod_blocks": "My First Mod Blocks",

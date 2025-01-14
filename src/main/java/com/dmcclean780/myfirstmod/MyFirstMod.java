@@ -2,10 +2,10 @@ package com.dmcclean780.myfirstmod;
 
 import org.slf4j.Logger;
 
-import com.dmcclean780.myfirstmod.items.AllItems;
-import com.dmcclean780.myfirstmod.items.ModCreativeModeTabs;
-import com.dmcclean780.myfirstmod.blocks.AllBlocks;
-
+import com.dmcclean780.myfirstmod.block.ModBlocks;
+import com.dmcclean780.myfirstmod.item.ModItems;
+import com.dmcclean780.myfirstmod.worldgen.tree.ModTrunkPlacerTypes;
+import com.dmcclean780.myfirstmod.item.ModCreativeModeTabs;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -28,7 +28,7 @@ public class MyFirstMod {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "myfirstmod";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public MyFirstMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
@@ -43,8 +43,9 @@ public class MyFirstMod {
 
         ModCreativeModeTabs.register(modEventBus);
 
-        AllItems.register(modEventBus);
-        AllBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModTrunkPlacerTypes.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -60,12 +61,25 @@ public class MyFirstMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(AllItems.COKE);
-            event.accept(AllItems.LIMESTONE_PIECE);
+            event.accept(ModItems.TIN_INGOT);
+            event.accept(ModItems.RAW_TIN);
+            event.accept(ModItems.LIMESTONE_PIECE);
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(AllBlocks.BLOCK_OF_COKE);
-            event.accept(AllBlocks.LIMESTONE);
+            event.accept(ModBlocks.TIN_DEEPSLATE_ORE);
+            event.accept(ModBlocks.TIN_STONE_ORE);
+            event.accept(ModBlocks.LIMESTONE);
+            event.accept(ModBlocks.RAW_TIN_BLOCK);
+            event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.OLYMPIAN_LOG);
+            event.accept(ModBlocks.OLYMPIAN_WOOD);
+            event.accept(ModBlocks.STRIPPED_OLYMPIAN_LOG);
+            event.accept(ModBlocks.STRIPPED_OLYMPIAN_WOOD);
+            event.accept(ModBlocks.OLYMPIAN_PLANKS);
+        }
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.OLYMPIAN_LEAVES);
+            event.accept(ModBlocks.OLYMPIAN_SAPLING);
         }
     }
 

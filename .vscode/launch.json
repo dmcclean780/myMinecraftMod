@@ -19,7 +19,6 @@
         "-Dfml.modFolders\u003dmyfirstmod%%/Users/danielmcclean/Repos/MDK-1.21-ModDevGradle/bin/main"
       ],
       "cwd": "${workspaceFolder}/run",
-      "env": {},
       "console": "internalConsole",
       "shortenCommandLine": "none"
     },
@@ -41,7 +40,6 @@
         "-Dfml.modFolders\u003dmyfirstmod%%/Users/danielmcclean/Repos/MDK-1.21-ModDevGradle/bin/main"
       ],
       "cwd": "${workspaceFolder}/run",
-      "env": {},
       "console": "internalConsole",
       "shortenCommandLine": "none"
     },
@@ -63,7 +61,6 @@
         "-Dfml.modFolders\u003dmyfirstmod%%/Users/danielmcclean/Repos/MDK-1.21-ModDevGradle/bin/main"
       ],
       "cwd": "${workspaceFolder}/run",
-      "env": {},
       "console": "internalConsole",
       "shortenCommandLine": "none"
     },
@@ -85,7 +82,6 @@
         "-Dfml.modFolders\u003dmyfirstmod%%/Users/danielmcclean/Repos/MDK-1.21-ModDevGradle/bin/main"
       ],
       "cwd": "${workspaceFolder}/run",
-      "env": {},
       "console": "internalConsole",
       "shortenCommandLine": "none"
     }

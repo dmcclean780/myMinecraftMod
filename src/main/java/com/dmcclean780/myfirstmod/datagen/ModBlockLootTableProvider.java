@@ -1,7 +1,8 @@
 package com.dmcclean780.myfirstmod.datagen;
 
-import com.dmcclean780.myfirstmod.blocks.AllBlocks;
-import com.dmcclean780.myfirstmod.items.AllItems;
+import com.dmcclean780.myfirstmod.block.ModBlocks;
+import com.dmcclean780.myfirstmod.item.ModItems;
+
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -26,11 +27,28 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(AllBlocks.BLOCK_OF_COKE.get());
-        // dropSelf(ModBlocks.MAGIC_BLOCK.get());
 
-        add(AllBlocks.LIMESTONE.get(),
-                block -> createMultipleOreDrops(AllBlocks.LIMESTONE.get(), AllItems.LIMESTONE_PIECE.get(), 2, 5));
+        
+
+        add(ModBlocks.LIMESTONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.LIMESTONE.get(), ModItems.LIMESTONE_PIECE.get(), 2, 5));
+
+    
+        dropSelf(ModBlocks.TIN_BLOCK.get());
+        dropSelf(ModBlocks.RAW_TIN_BLOCK.get());
+        add(ModBlocks.TIN_DEEPSLATE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.TIN_DEEPSLATE_ORE.get(), ModItems.RAW_TIN.get(), 1, 1));
+        add(ModBlocks.TIN_STONE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.TIN_STONE_ORE.get(), ModItems.RAW_TIN.get(), 1, 1));
+
+        dropSelf(ModBlocks.OLYMPIAN_LOG.get());
+        dropSelf(ModBlocks.OLYMPIAN_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_OLYMPIAN_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_OLYMPIAN_WOOD.get());
+        dropSelf(ModBlocks.OLYMPIAN_PLANKS.get());
+        dropSelf(ModBlocks.OLYMPIAN_SAPLING.get());
+        this.add(ModBlocks.OLYMPIAN_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.OLYMPIAN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
     }
 
@@ -44,6 +62,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return AllBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }
