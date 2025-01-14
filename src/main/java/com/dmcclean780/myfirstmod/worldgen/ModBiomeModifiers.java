@@ -36,7 +36,7 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_OLYMPIAN_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.FLOWER_FOREST), biomes.getOrThrow(Biomes.FOREST)),
+                HolderSet.direct(biomes.getOrThrow(Biomes.FLOWER_FOREST), biomes.getOrThrow(Biomes.FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.OLYMPIAN_TREE_PALACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 

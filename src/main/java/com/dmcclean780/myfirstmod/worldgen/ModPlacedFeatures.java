@@ -36,7 +36,7 @@ public class ModPlacedFeatures {
         );
 
         register(context, OLYMPIAN_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLYMPIAN_TREE_KEY),
-            VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.00001F, 0),
+            VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05F, 1),
             ModBlocks.OLYMPIAN_SAPLING.get()));
 
     }
