@@ -1,6 +1,6 @@
-// 1.21.1	2025-01-13T19:13:55.733926	Registries
+// 1.21.1	2025-01-15T00:03:37.688241	Registries
 da30698989eb1bb33c9514d17208ab68632c39f0 data/myfirstmod/neoforge/biome_modifier/add_limestone.json
-5637be1b4f779f98e9240b072184cd69203970ff data/myfirstmod/neoforge/biome_modifier/add_olympian_tree.json
+e3c6e2bbcd0f322bcf1ad4d6ff0380560972101e data/myfirstmod/neoforge/biome_modifier/add_olympian_tree.json
 2128a746f544e6b21a7a4c6e5560211f41c6b58a data/myfirstmod/neoforge/biome_modifier/add_tin_ore.json
 7bfdce99fe9596e0e810302351fc2a3a5229d36b data/myfirstmod/worldgen/configured_feature/limestone.json
 fc8793a80761cb595639622e28c6f2ac7818633f data/myfirstmod/worldgen/configured_feature/olympian_tree.json
@@ -8,5 +8,5 @@ b0ea5874001655869f964008a76f4a67d76ed676 data/myfirstmod/worldgen/configured_fea
 e99d2fb08b848b2f12b283dc8328cd1a9b4dbf34 data/myfirstmod/worldgen/configured_feature/olympian_tree_large.json
 155f09deede61b9ca1e8485117a6ba1dfd2b7705 data/myfirstmod/worldgen/configured_feature/tin_ore.json
 eea665307cd436508d140efdc1244c4ca31324a7 data/myfirstmod/worldgen/placed_feature/limestone_placed.json
-005fdc417e86cb5b5a7c956dc08f752617623e3f data/myfirstmod/worldgen/placed_feature/olympian_tree_placed.json
+8a306a242e9e14822c0cc1da21f7e84002bc38fb data/myfirstmod/worldgen/placed_feature/olympian_tree_placed.json
 956c00758b7c349f9fd2c7055ed0716f338d16ca data/myfirstmod/worldgen/placed_feature/tin_ore_placed.json
