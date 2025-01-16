@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -134,6 +135,24 @@ public class ModBlocks {
         "olympian_sapling",
         registryName -> new SaplingBlock(ModTreeGrowers.OLYMPIAN_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))
     );
+
+    // public static final DeferredBlock<Block> BLOODIED_DIRT = registerBlock(
+    //     "bloodied_dirt", 
+    //     registryName -> new Block(BlockBehaviour.Properties.of()
+    //         //.setId(ResourceKey.create(Registries.BLOCK, registryName))
+    //         .strength(3f)
+    //         .requiresCorrectToolForDrops()
+    //         .sound(SoundType.GRAVEL))
+    // );
+
+    // public static final DeferredBlock<Block> BLOODIED_GRASS = registerBlock(
+    //     "bloodied_grass", 
+    //     registryName -> new GrassBlock(BlockBehaviour.Properties.of()
+    //         //.setId(ResourceKey.create(Registries.BLOCK, registryName))
+    //         .strength(3f)
+    //         .requiresCorrectToolForDrops()
+    //         .sound(SoundType.GRASS))
+    // );
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<ResourceLocation, T> blockFactory) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, blockFactory);

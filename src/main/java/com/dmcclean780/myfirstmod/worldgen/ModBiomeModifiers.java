@@ -18,7 +18,7 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_LIMESTONE = registerKey("add_limestone");
     public static final ResourceKey<BiomeModifier> ADD_TIN_ORE = registerKey("add_tin_ore");
-    public static final ResourceKey<BiomeModifier> ADD_OLYMPIAN_TREE = registerKey("add_olympian_tree");
+    public static final ResourceKey<BiomeModifier> ADD_UNCOMMON_OLYMPIAN_TREE = registerKey("add_uncommon_olympian_tree");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         // CF -> PF -> BM
@@ -35,9 +35,9 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TIN_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
-        context.register(ADD_OLYMPIAN_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_UNCOMMON_OLYMPIAN_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.FLOWER_FOREST), biomes.getOrThrow(Biomes.FOREST)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.OLYMPIAN_TREE_PALACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.UNCOMMON_OLYMPIAN_TREE_PALACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
     }

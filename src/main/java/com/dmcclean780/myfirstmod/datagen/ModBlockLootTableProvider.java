@@ -9,9 +9,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -49,6 +51,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.OLYMPIAN_SAPLING.get());
         this.add(ModBlocks.OLYMPIAN_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.OLYMPIAN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+
+        // this.add(ModBlocks.BLOODIED_GRASS.get(), block ->
+        //         createGrassDrops(Blocks.DIRT));
+        // this.add(ModBlocks.BLOODIED_DIRT.get(), block ->
+        //         createGrassDrops(Blocks.DIRT));
+        
 
     }
 

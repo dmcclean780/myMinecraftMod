@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 
 import com.dmcclean780.myfirstmod.block.ModBlocks;
 import com.dmcclean780.myfirstmod.item.ModItems;
+import com.dmcclean780.myfirstmod.worldgen.biome.ModTerraBlender;
+import com.dmcclean780.myfirstmod.worldgen.biome.surface.ModSurfaceRules;
 import com.dmcclean780.myfirstmod.worldgen.tree.ModTrunkPlacerTypes;
 import com.dmcclean780.myfirstmod.item.ModCreativeModeTabs;
 import com.mojang.logging.LogUtils;
@@ -21,6 +23,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MyFirstMod.MODID)
@@ -46,6 +49,8 @@ public class MyFirstMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
+
+        ModTerraBlender.registerBiomes();
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -55,7 +60,9 @@ public class MyFirstMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+        });
     }
 
     // Add the example block item to the building blocks tab

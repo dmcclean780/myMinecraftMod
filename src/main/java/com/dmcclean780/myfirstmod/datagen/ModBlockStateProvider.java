@@ -48,6 +48,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.OLYMPIAN_LEAVES);
         saplingBlock(ModBlocks.OLYMPIAN_SAPLING);
 
+        //blockWithItem(ModBlocks.BLOODIED_DIRT);
+        //blockWithItem(ModBlocks.BLOODIED_GRASS);
+
+        //horizontalBlock(ModBlocks.BLOODIED_GRASS.get(), blockTexture(ModBlocks.STRIPPED_OLYMPIAN_LOG.get()));
 
     }
 
