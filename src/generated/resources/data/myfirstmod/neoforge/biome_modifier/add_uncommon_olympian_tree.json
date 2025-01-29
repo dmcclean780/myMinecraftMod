@@ -1,9 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": [
-    "minecraft:flower_forest",
-    "minecraft:forest"
-  ],
-  "features": "myfirstmod:uncommon_olympian_tree_placed",
-  "step": "vegetal_decoration"
-}

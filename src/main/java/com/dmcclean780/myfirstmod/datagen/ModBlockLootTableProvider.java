@@ -43,14 +43,24 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.TIN_STONE_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.TIN_STONE_ORE.get(), ModItems.RAW_TIN.get(), 1, 1));
 
-        dropSelf(ModBlocks.OLYMPIAN_LOG.get());
-        dropSelf(ModBlocks.OLYMPIAN_WOOD.get());
-        dropSelf(ModBlocks.STRIPPED_OLYMPIAN_LOG.get());
-        dropSelf(ModBlocks.STRIPPED_OLYMPIAN_WOOD.get());
-        dropSelf(ModBlocks.OLYMPIAN_PLANKS.get());
-        dropSelf(ModBlocks.OLYMPIAN_SAPLING.get());
-        this.add(ModBlocks.OLYMPIAN_LEAVES.get(), block ->
-                createLeavesDrops(block, ModBlocks.OLYMPIAN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(ModBlocks.BLOODWOOD_LOG.get());
+        dropSelf(ModBlocks.BLOODWOOD_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_BLOODWOOD_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_BLOODWOOD_WOOD.get());
+        dropSelf(ModBlocks.BLOODWOOD_PLANKS.get());
+        dropSelf(ModBlocks.BLOODWOOD_STAIRS.get());
+        dropSelf(ModBlocks.BLOODWOOD_BUTTON.get());
+        dropSelf(ModBlocks.BLOODWOOD_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.BLOODWOOD_TRAPDOOR.get());
+        dropSelf(ModBlocks.BLOODWOOD_FENCE.get());
+        dropSelf(ModBlocks.BLOODWOOD_FENCE_GATE.get());
+        add(ModBlocks.BLOODWOOD_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.BLOODWOOD_SLAB.get()));
+        add(ModBlocks.BLOODWOOD_DOOR.get(), 
+                block -> createDoorTable(ModBlocks.BLOODWOOD_DOOR.get()));
+        dropSelf(ModBlocks.BLOODWOOD_SAPLING.get());
+        this.add(ModBlocks.BLOODWOOD_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.BLOODWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
         // this.add(ModBlocks.BLOODIED_GRASS.get(), block ->

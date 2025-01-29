@@ -3,13 +3,19 @@ package com.dmcclean780.myfirstmod;
 import org.slf4j.Logger;
 
 import com.dmcclean780.myfirstmod.block.ModBlocks;
+import com.dmcclean780.myfirstmod.entity.ModEntities;
+import com.dmcclean780.myfirstmod.entity.client.BasiliskRenderer;
+import com.dmcclean780.myfirstmod.entity.client.GeckoRenderer;
+import com.dmcclean780.myfirstmod.entity.custom.GeckoEntity;
 import com.dmcclean780.myfirstmod.item.ModItems;
 import com.dmcclean780.myfirstmod.worldgen.biome.ModTerraBlender;
 import com.dmcclean780.myfirstmod.worldgen.biome.surface.ModSurfaceRules;
+import com.dmcclean780.myfirstmod.worldgen.tree.ModTreeDecoratorTypes;
 import com.dmcclean780.myfirstmod.worldgen.tree.ModTrunkPlacerTypes;
 import com.dmcclean780.myfirstmod.item.ModCreativeModeTabs;
 import com.mojang.logging.LogUtils;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -49,8 +55,10 @@ public class MyFirstMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
+        ModTreeDecoratorTypes.register(modEventBus);
 
         ModTerraBlender.registerBiomes();
+        ModEntities.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -78,15 +86,27 @@ public class MyFirstMod {
             event.accept(ModBlocks.LIMESTONE);
             event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
-            event.accept(ModBlocks.OLYMPIAN_LOG);
-            event.accept(ModBlocks.OLYMPIAN_WOOD);
-            event.accept(ModBlocks.STRIPPED_OLYMPIAN_LOG);
-            event.accept(ModBlocks.STRIPPED_OLYMPIAN_WOOD);
-            event.accept(ModBlocks.OLYMPIAN_PLANKS);
+            event.accept(ModBlocks.BLOODWOOD_LOG);
+            event.accept(ModBlocks.BLOODWOOD_WOOD);
+            event.accept(ModBlocks.STRIPPED_BLOODWOOD_LOG);
+            event.accept(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+            event.accept(ModBlocks.BLOODWOOD_PLANKS);
+            event.accept(ModBlocks.BLOODWOOD_BUTTON);
+            event.accept(ModBlocks.BLOODWOOD_DOOR);
+            event.accept(ModBlocks.BLOODWOOD_TRAPDOOR);
+            event.accept(ModBlocks.BLOODWOOD_FENCE);
+            event.accept(ModBlocks.BLOODWOOD_FENCE_GATE);
+            event.accept(ModBlocks.BLOODWOOD_PRESSURE_PLATE);
+            event.accept(ModBlocks.BLOODWOOD_SLAB);
+            event.accept(ModBlocks.BLOODWOOD_STAIRS);
         }
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModBlocks.OLYMPIAN_LEAVES);
-            event.accept(ModBlocks.OLYMPIAN_SAPLING);
+            event.accept(ModBlocks.BLOODWOOD_LEAVES);
+            event.accept(ModBlocks.BLOODWOOD_SAPLING);
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.GECKO_SPAWN_EGG);
+            event.accept(ModItems.BASILISK_SPAWN_EGG);
         }
     }
 
@@ -102,7 +122,8 @@ public class MyFirstMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+            EntityRenderers.register(ModEntities.BASILISK.get(), BasiliskRenderer::new);
         }
     }
 }

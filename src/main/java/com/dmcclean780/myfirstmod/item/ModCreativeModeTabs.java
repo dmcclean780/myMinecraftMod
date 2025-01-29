@@ -26,12 +26,20 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.LIMESTONE);
                 output.accept(ModBlocks.RAW_TIN_BLOCK);
                 output.accept(ModBlocks.TIN_BLOCK);
-                output.accept(ModBlocks.OLYMPIAN_LOG);
-                output.accept(ModBlocks.OLYMPIAN_WOOD);
-                output.accept(ModBlocks.STRIPPED_OLYMPIAN_LOG);
-                output.accept(ModBlocks.STRIPPED_OLYMPIAN_WOOD);
-                output.accept(ModBlocks.OLYMPIAN_PLANKS);
-                output.accept(ModBlocks.OLYMPIAN_LEAVES);
+                output.accept(ModBlocks.BLOODWOOD_LOG);
+                output.accept(ModBlocks.BLOODWOOD_WOOD);
+                output.accept(ModBlocks.STRIPPED_BLOODWOOD_LOG);
+                output.accept(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+                output.accept(ModBlocks.BLOODWOOD_PLANKS);
+                output.accept(ModBlocks.BLOODWOOD_LEAVES);
+                output.accept(ModBlocks.BLOODWOOD_BUTTON);
+                output.accept(ModBlocks.BLOODWOOD_DOOR);
+                output.accept(ModBlocks.BLOODWOOD_TRAPDOOR);
+                output.accept(ModBlocks.BLOODWOOD_FENCE);
+                output.accept(ModBlocks.BLOODWOOD_FENCE_GATE);
+                output.accept(ModBlocks.BLOODWOOD_PRESSURE_PLATE);
+                output.accept(ModBlocks.BLOODWOOD_SLAB);
+                output.accept(ModBlocks.BLOODWOOD_STAIRS);
 
             }).build()
     );
@@ -44,7 +52,9 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.LIMESTONE_PIECE);
                 output.accept(ModItems.TIN_INGOT);
                 output.accept(ModItems.RAW_TIN);
-                output.accept(ModBlocks.OLYMPIAN_SAPLING);
+                output.accept(ModBlocks.BLOODWOOD_SAPLING);
+                output.accept(ModItems.GECKO_SPAWN_EGG);
+                output.accept(ModItems.BASILISK_SPAWN_EGG);
             }).build()
     );
 

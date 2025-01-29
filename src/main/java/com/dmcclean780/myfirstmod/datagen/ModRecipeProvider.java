@@ -55,6 +55,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         List<ItemLike> tin_smelting_items = List.of(ModBlocks.TIN_STONE_ORE.get(), ModBlocks.TIN_DEEPSLATE_ORE.get(), ModItems.RAW_TIN.get());
         oreSmelting(recipeOutput, tin_smelting_items, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.25f, 200, "tin");
         oreBlasting(recipeOutput, tin_smelting_items, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.25f, 100, "tin");
+
+        stairBuilder(ModBlocks.BLOODWOOD_STAIRS.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS)).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOODWOOD_SLAB.get(), ModBlocks.BLOODWOOD_PLANKS.get());
+
+        buttonBuilder(ModBlocks.BLOODWOOD_BUTTON.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS.get())).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.BLOODWOOD_PRESSURE_PLATE.get(), ModBlocks.BLOODWOOD_PLANKS.get());
+
+        fenceBuilder(ModBlocks.BLOODWOOD_FENCE.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS.get())).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.BLOODWOOD_FENCE_GATE.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS.get())).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS.get())).save(recipeOutput);
+
+        doorBuilder(ModBlocks.BLOODWOOD_DOOR.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS.get())).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.BLOODWOOD_TRAPDOOR.get(), Ingredient.of(ModBlocks.BLOODWOOD_PLANKS.get())).group("bloodwood")
+                .unlockedBy("has_bloodwood", has(ModBlocks.BLOODWOOD_PLANKS.get())).save(recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

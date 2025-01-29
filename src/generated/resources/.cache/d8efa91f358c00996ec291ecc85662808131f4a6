@@ -1,4 +1,6 @@
-// 1.21.1	2025-01-10T21:47:36.43406	Tags for minecraft:block mod id myfirstmod
-dbd304bee1955eaebaae5b27bb27ceb96aaa9c76 data/minecraft/tags/block/logs_that_burn.json
+// 1.21.1	2025-01-16T21:19:03.874592	Tags for minecraft:block mod id myfirstmod
+1eff010bf5ebca28bec3d48dacda69b38704b2f4 data/minecraft/tags/block/fence_gates.json
+33d5b4e46952e98eafe6d390fa245daf843bb11a data/minecraft/tags/block/fences.json
+a090340f7c522d23524f8dde45c1922718357d4a data/minecraft/tags/block/logs_that_burn.json
 7c9333093a9d1348a45e043cc320f732da06b092 data/minecraft/tags/block/mineable/pickaxe.json
 40e390fb8c41d78177f1abcd0c868f913bf1d96d data/minecraft/tags/block/needs_stone_tool.json

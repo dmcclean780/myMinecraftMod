@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bloodwood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "myfirstmod:bloodwood_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "myfirstmod:bloodwood_fence"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bloodwood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "myfirstmod:bloodwood_fence"
+    ]
+  }
+}

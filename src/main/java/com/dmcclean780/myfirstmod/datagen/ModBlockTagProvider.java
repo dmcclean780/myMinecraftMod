@@ -14,7 +14,8 @@ import org.lwjgl.openal.AL;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends BlockTagsProvider {
-    public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+            @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, MyFirstMod.MODID, existingFileHelper);
     }
 
@@ -26,20 +27,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.LIMESTONE.get())
                 .add(ModBlocks.TIN_BLOCK.get())
                 .add(ModBlocks.RAW_TIN_BLOCK.get());
-               
+
         tag(BlockTags.NEEDS_STONE_TOOL)
-            .add(ModBlocks.LIMESTONE.get())
-            .add(ModBlocks.TIN_STONE_ORE.get())
-            .add(ModBlocks.TIN_DEEPSLATE_ORE.get())
-            .add(ModBlocks.RAW_TIN_BLOCK.get())
-            .add(ModBlocks.TIN_BLOCK.get());
-        
+                .add(ModBlocks.LIMESTONE.get())
+                .add(ModBlocks.TIN_STONE_ORE.get())
+                .add(ModBlocks.TIN_DEEPSLATE_ORE.get())
+                .add(ModBlocks.RAW_TIN_BLOCK.get())
+                .add(ModBlocks.TIN_BLOCK.get());
+
         this.tag(BlockTags.LOGS_THAT_BURN)
-            .add(ModBlocks.OLYMPIAN_LOG.get())
-            .add(ModBlocks.OLYMPIAN_WOOD.get())
-            .add(ModBlocks.STRIPPED_OLYMPIAN_LOG.get())
-            .add(ModBlocks.STRIPPED_OLYMPIAN_WOOD.get());
-                
+                .add(ModBlocks.BLOODWOOD_LOG.get())
+                .add(ModBlocks.BLOODWOOD_WOOD.get())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG.get())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD.get());
+
+        tag(BlockTags.FENCES).add(ModBlocks.BLOODWOOD_FENCE.get());
+        tag(BlockTags.FENCE_GATES).add(ModBlocks.BLOODWOOD_FENCE_GATE.get());
 
     }
 }

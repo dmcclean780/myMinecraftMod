@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "bloodwood",
+  "key": {
+    "#": {
+      "item": "myfirstmod:bloodwood_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "myfirstmod:bloodwood_trapdoor"
+  }
+}

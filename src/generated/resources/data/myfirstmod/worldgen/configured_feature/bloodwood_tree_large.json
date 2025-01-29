@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "decorators": [
+      {
+        "type": "myfirstmod:vines_from_leaves",
+        "block_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:weeping_vines_plant"
+          }
+        },
+        "directions": [
+          "down"
+        ],
+        "exclusion_radius_xz": 1,
+        "exclusion_radius_y": 1,
+        "min_length": 5,
+        "probability": 0.5,
+        "rand_length": 10,
+        "required_empty_blocks": 1
+      }
+    ],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "foliage_placer": {
+      "type": "minecraft:cherry_foliage_placer",
+      "corner_hole_chance": 0.25,
+      "hanging_leaves_chance": 0.16666667,
+      "hanging_leaves_extension_chance": 0.33333334,
+      "height": 4,
+      "offset": 0,
+      "radius": 5,
+      "wide_bottom_layer_hole_chance": 0.25
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "myfirstmod:bloodwood_leaves"
+      }
+    },
+    "force_dirt": false,
+    "ignore_vines": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 2
+    },
+    "trunk_placer": {
+      "type": "minecraft:fancy_trunk_placer",
+      "base_height": 7,
+      "height_rand_a": 24,
+      "height_rand_b": 14
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "myfirstmod:bloodwood_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

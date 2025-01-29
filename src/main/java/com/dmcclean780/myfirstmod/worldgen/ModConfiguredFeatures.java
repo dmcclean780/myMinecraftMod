@@ -5,9 +5,13 @@ import java.util.OptionalInt;
 
 import com.dmcclean780.myfirstmod.MyFirstMod;
 import com.dmcclean780.myfirstmod.block.ModBlocks;
-import com.dmcclean780.myfirstmod.worldgen.tree.custom.PineTrunkPlacer;
+import com.dmcclean780.myfirstmod.worldgen.tree.custom.MegaTrunkPlacer;
+import com.dmcclean780.myfirstmod.worldgen.tree.custom.VinesFromLeavesDecorator;
+import com.google.common.collect.ImmutableList;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.registries.Registries;
@@ -38,14 +42,16 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.UpwardsBranchingT
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LIMESTONE_KEY = registerKey("limestone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_ORE_KEY = registerKey("tin_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OLYMPIAN_TREE_KEY = registerKey("olympian_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OLYMPIAN_TREE_KEY_LARGE = registerKey("olympian_tree_large");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OLYMPIAN_TREE_KEY_GIANT = registerKey("olympian_tree_giant");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_TREE_KEY = registerKey("bloodwood_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_TREE_KEY_LARGE = registerKey("bloodwood_tree_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_TREE_KEY_GIANT = registerKey("bloodwood_tree_giant");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplacables = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
@@ -63,33 +69,33 @@ public class ModConfiguredFeatures {
         register(context, LIMESTONE_KEY, Feature.ORE, new OreConfiguration(overworldLimestone, 64));
         register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTin, 15));
 
-        register(context, OLYMPIAN_TREE_KEY_LARGE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.OLYMPIAN_LOG.get()),
+        register(context, BLOODWOOD_TREE_KEY_LARGE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.BLOODWOOD_LOG.get()),
                 new FancyTrunkPlacer(7, 24, 14),
 
-                BlockStateProvider.simple(ModBlocks.OLYMPIAN_LEAVES.get()),
+                BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES.get()),
                 new CherryFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(4), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
 
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new VinesFromLeavesDecorator(0.5F, 1, 1, BlockStateProvider.simple(Blocks.WEEPING_VINES_PLANT), 1, List.of(Direction.DOWN), 5, 10))).build());
         
-        register(context, OLYMPIAN_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                    BlockStateProvider.simple(ModBlocks.OLYMPIAN_LOG.get()),
+        register(context, BLOODWOOD_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(ModBlocks.BLOODWOOD_LOG.get()),
                     new FancyTrunkPlacer(7, 11, 7),
     
-                    BlockStateProvider.simple(ModBlocks.OLYMPIAN_LEAVES.get()),
+                    BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES.get()),
                     new CherryFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(4), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
     
-                    new TwoLayersFeatureSize(1, 0, 2)).build());
+                    new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new VinesFromLeavesDecorator(0.3F, 1, 1, BlockStateProvider.simple(Blocks.WEEPING_VINES_PLANT), 1, List.of(Direction.DOWN), 7, 10))).build());
 
-        register(context, OLYMPIAN_TREE_KEY_GIANT, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                    BlockStateProvider.simple(ModBlocks.OLYMPIAN_LOG.get()),
-                    new PineTrunkPlacer( 20, 11, 7),
+        register(context, BLOODWOOD_TREE_KEY_GIANT, Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(ModBlocks.BLOODWOOD_LOG.get()),
+                    new MegaTrunkPlacer( 20, 11, 7),
         
-                    BlockStateProvider.simple(ModBlocks.OLYMPIAN_LEAVES.get()),
+                    BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES.get()),
                     new CherryFoliagePlacer(ConstantInt.of(6), ConstantInt.of(4), ConstantInt.of(7), 0.5F, 0.5F, 0.6F, 0.6F),
                     //new FancyFoliagePlacer(ConstantInt.of(7), ConstantInt.of(7), 7),
 
-                    new TwoLayersFeatureSize(1, 0, 2)).build());
+                    new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new VinesFromLeavesDecorator(0.5F, 1, 1, BlockStateProvider.simple(Blocks.WEEPING_VINES_PLANT), 1, List.of(Direction.DOWN), 10, 10))).build()));
 
 
     }

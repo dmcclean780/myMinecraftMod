@@ -23,12 +23,37 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TIN_INGOT.get());
         basicItem(ModItems.RAW_TIN.get());
 
-        saplingItem(ModBlocks.OLYMPIAN_SAPLING);
+        saplingItem(ModBlocks.BLOODWOOD_SAPLING);
+
+        buttonItem(ModBlocks.BLOODWOOD_BUTTON, ModBlocks.BLOODWOOD_PLANKS);
+        fenceItem(ModBlocks.BLOODWOOD_FENCE, ModBlocks.BLOODWOOD_PLANKS);
+        basicItem(ModBlocks.BLOODWOOD_DOOR.asItem());
+
+        withExistingParent(ModItems.GECKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.BASILISK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID,"block/" + item.getId().getPath()));
+    }
+
+    public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID,
+                        "block/" + baseBlock.getId().getPath()));
     }
 }

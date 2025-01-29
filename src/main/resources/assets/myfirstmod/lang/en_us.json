@@ -3,6 +3,9 @@
   "item.myfirstmod.limestone_piece": "Limestone Piece",
   "item.myfirstmod.tin_ingot": "Tin Ingot",
   "item.myfirstmod.raw_tin": "Raw Tin",
+  "item.myfirstmod.gecko_spawn_egg": "Gecko Spawn Egg",
+  "item.myfirstmod.basilisk_spawn_egg": "Basilisk Spawn Egg",
+
 
   "block.myfirstmod.block_of_coke": "Block Of Coke",
   "block.myfirstmod.limestone": "Limestone",
@@ -10,13 +13,22 @@
   "block.myfirstmod.tin_deepslate_ore": "Deepslate Tin Ore",
   "block.myfirstmod.tin_block": "Tin Block",
   "block.myfirstmod.raw_tin_block": "Raw Tin Block",
-  "block.myfirstmod.olympian_log": "Olympian Log",
-  "block.myfirstmod.olympian_planks": "Olympian Planks",
-  "block.myfirstmod.olympian_leaves": "Olympian Leaves",
-  "block.myfirstmod.olympian_sapling": "Olympian Sapling",
-  "block.myfirstmod.olympian_wood": "Olympian Wood",
-  "block.myfirstmod.stripped_olympian_log": "Stripped Olympian Log",
-  "block.myfirstmod.stripped_olympian_wood": "Stripped Olympian Wood",
+  "block.myfirstmod.bloodwood_log": "Bloodwood Log",
+  "block.myfirstmod.bloodwood_planks": "Bloodwood Planks",
+  "block.myfirstmod.bloodwood_leaves": "Bloodwood Leaves",
+  "block.myfirstmod.bloodwood_sapling": "Bloodwood Sapling",
+  "block.myfirstmod.bloodwood_wood": "Bloodwood Wood",
+  "block.myfirstmod.stripped_bloodwood_log": "Stripped Bloodwood Log",
+  "block.myfirstmod.stripped_bloodwood_wood": "Stripped Bloodwood Wood",
+  "block.myfirstmod.bloodwood_stairs": "Bloodwood Stairs",
+  "block.myfirstmod.bloodwood_slab": "Bloodwood Slab",
+  "block.myfirstmod.bloodwood_button": "Bloodwood Button",
+  "block.myfirstmod.bloodwood_pressure_plate": "Bloodwood Pressure Plate",
+  "block.myfirstmod.bloodwood_fence": "Bloodwood Fence",
+  "block.myfirstmod.bloodwood_fence_gate": "Bloodwood Fence Gate",
+  "block.myfirstmod.bloodwood_wall": "Bloodwood Wall",
+  "block.myfirstmod.bloodwood_door": "Bloodwood Door",
+  "block.myfirstmod.bloodwood_trapdoor": "Bloodwood Trapdoor",
 
   "creativetab.myfirstmod.my_first_mod": "My First Mod",
   "creativetab.myfirstmod.my_first_mod_blocks": "My First Mod Blocks",
@@ -28,6 +40,9 @@
   "advancement.myfirstmod.industrialisation.description": "Start Industrialising Your World",
 
   "advancement.myfirstmod.get_block_of_coke.title": "Superfuel",
-  "advancement.myfirstmod.get_block_of_coke.description": "Get a Block of Coke"
+  "advancement.myfirstmod.get_block_of_coke.description": "Get a Block of Coke",
+
+  "entity.myfirstmod.gecko": "Gecko",
+  "entity.myfirstmod.basilisk": "Basilisk"
 
 }

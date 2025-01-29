@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "myfirstmod:block/olympian_log_top",
-    "side": "myfirstmod:block/olympian_log"
-  }
-}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bloodwood",
+  "key": {
+    "#": {
+      "item": "myfirstmod:bloodwood_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "myfirstmod:bloodwood_stairs"
+  }
+}

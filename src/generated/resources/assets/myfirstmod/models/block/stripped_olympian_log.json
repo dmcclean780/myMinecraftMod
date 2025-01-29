@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "myfirstmod:block/stripped_olympian_log_top",
-    "side": "myfirstmod:block/stripped_olympian_log"
-  }
-}

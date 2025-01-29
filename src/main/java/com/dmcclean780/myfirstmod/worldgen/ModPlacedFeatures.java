@@ -22,10 +22,10 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> LIMESTONE_PLACED_KEY = registerKey("limestone_placed");
     public static final ResourceKey<PlacedFeature> TIN_ORE_PLACED_KEY = registerKey("tin_ore_placed");
-    public static final ResourceKey<PlacedFeature> UNCOMMON_OLYMPIAN_TREE_PALACED_KEY = registerKey("uncommon_olympian_tree_placed");
-    public static final ResourceKey<PlacedFeature> OLYMPIAN_TREE_PALACED_KEY = registerKey("olympian_tree_placed");
-    public static final ResourceKey<PlacedFeature> LARGE_OLYMPIAN_TREE_PALACED_KEY = registerKey("large_olympian_tree_placed");
-    public static final ResourceKey<PlacedFeature> GIANT_OLYMPIAN_TREE_PALACED_KEY = registerKey("giant_olympian_tree_placed");
+    public static final ResourceKey<PlacedFeature> UNCOMMON_BLOODWOOD_TREE_PALACED_KEY = registerKey("uncommon_bloodwood_tree_placed");
+    public static final ResourceKey<PlacedFeature> BLOODWOOD_TREE_PALACED_KEY = registerKey("bloodwood_tree_placed");
+    public static final ResourceKey<PlacedFeature> LARGE_BLOODWOOD_TREE_PALACED_KEY = registerKey("large_bloodwood_tree_placed");
+    public static final ResourceKey<PlacedFeature> GIANT_BLOODWOOD_TREE_PALACED_KEY = registerKey("giant_bloodwood_tree_placed");
     
     
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -39,21 +39,21 @@ public class ModPlacedFeatures {
             ModOrePlacement.commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(112)))
         );
 
-        register(context, UNCOMMON_OLYMPIAN_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLYMPIAN_TREE_KEY),
+        register(context, UNCOMMON_BLOODWOOD_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05F, 1),
-            ModBlocks.OLYMPIAN_SAPLING.get()));
+            ModBlocks.BLOODWOOD_SAPLING.get()));
 
-        register(context, OLYMPIAN_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLYMPIAN_TREE_KEY),
+        register(context, BLOODWOOD_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1),
-            ModBlocks.OLYMPIAN_SAPLING.get()));
+            ModBlocks.BLOODWOOD_SAPLING.get()));
 
-        register(context, LARGE_OLYMPIAN_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLYMPIAN_TREE_KEY_LARGE),
+        register(context, LARGE_BLOODWOOD_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY_LARGE),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(5, 0.1F, 1),
-            ModBlocks.OLYMPIAN_SAPLING.get()));
+            ModBlocks.BLOODWOOD_SAPLING.get()));
 
-        register(context, GIANT_OLYMPIAN_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLYMPIAN_TREE_KEY_GIANT),
+        register(context, GIANT_BLOODWOOD_TREE_PALACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY_GIANT),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
-            ModBlocks.OLYMPIAN_SAPLING.get()));
+            ModBlocks.BLOODWOOD_SAPLING.get()));
 
     }
 

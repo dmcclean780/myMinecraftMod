@@ -34,25 +34,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.LIMESTONE);
 
-        logBlock(((RotatedPillarBlock) ModBlocks.OLYMPIAN_LOG.get()));
-        axisBlock( ( (RotatedPillarBlock)  ModBlocks.OLYMPIAN_WOOD.get() ) , blockTexture( ModBlocks.OLYMPIAN_LOG.get() ));
-        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_OLYMPIAN_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_OLYMPIAN_WOOD.get()), blockTexture(ModBlocks.STRIPPED_OLYMPIAN_LOG.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.BLOODWOOD_LOG.get()));
+        axisBlock( ( (RotatedPillarBlock)  ModBlocks.BLOODWOOD_WOOD.get() ) , blockTexture( ModBlocks.BLOODWOOD_LOG.get() ));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BLOODWOOD_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BLOODWOOD_WOOD.get()), blockTexture(ModBlocks.STRIPPED_BLOODWOOD_LOG.get()));
 
-        blockItem(ModBlocks.OLYMPIAN_LOG);
-        blockItem(ModBlocks.OLYMPIAN_WOOD);
-        blockItem(ModBlocks.STRIPPED_OLYMPIAN_LOG);
-        blockItem(ModBlocks.STRIPPED_OLYMPIAN_WOOD);
-        blockWithItem(ModBlocks.OLYMPIAN_PLANKS);
+        blockItem(ModBlocks.BLOODWOOD_LOG);
+        blockItem(ModBlocks.BLOODWOOD_WOOD);
+        blockItem(ModBlocks.STRIPPED_BLOODWOOD_LOG);
+        blockItem(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+        blockWithItem(ModBlocks.BLOODWOOD_PLANKS);
 
-        leavesBlock(ModBlocks.OLYMPIAN_LEAVES);
-        saplingBlock(ModBlocks.OLYMPIAN_SAPLING);
+        leavesBlock(ModBlocks.BLOODWOOD_LEAVES);
+        saplingBlock(ModBlocks.BLOODWOOD_SAPLING);
 
-        //blockWithItem(ModBlocks.BLOODIED_DIRT);
-        //blockWithItem(ModBlocks.BLOODIED_GRASS);
+        stairsBlock(ModBlocks.BLOODWOOD_STAIRS.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
+        slabBlock(ModBlocks.BLOODWOOD_SLAB.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
 
-        //horizontalBlock(ModBlocks.BLOODIED_GRASS.get(), blockTexture(ModBlocks.STRIPPED_OLYMPIAN_LOG.get()));
+        buttonBlock(ModBlocks.BLOODWOOD_BUTTON.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
+        pressurePlateBlock(ModBlocks.BLOODWOOD_PRESSURE_PLATE.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
 
+        fenceBlock(ModBlocks.BLOODWOOD_FENCE.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
+        fenceGateBlock(ModBlocks.BLOODWOOD_FENCE_GATE.get(), blockTexture(ModBlocks.BLOODWOOD_PLANKS.get()));
+
+        doorBlockWithRenderType(ModBlocks.BLOODWOOD_DOOR.get(), modLoc("block/bloodwood_door_bottom"), modLoc("block/bloodwood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(ModBlocks.BLOODWOOD_TRAPDOOR.get(), modLoc("block/bloodwood_trapdoor"), true, "cutout");
+
+        blockItem(ModBlocks.BLOODWOOD_STAIRS);
+        blockItem(ModBlocks.BLOODWOOD_SLAB);
+        blockItem(ModBlocks.BLOODWOOD_PRESSURE_PLATE);
+        blockItem(ModBlocks.BLOODWOOD_FENCE_GATE);
+        blockItem(ModBlocks.BLOODWOOD_TRAPDOOR, "_bottom");
     }
 
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
@@ -73,5 +85,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockItem(DeferredBlock<?> deferredBlock) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("myfirstmod:block/" + deferredBlock.getId().getPath()));
+    }
+
+    private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("myfirstmod:block/" + deferredBlock.getId().getPath() + appendix));
     }
 }
