@@ -11,12 +11,13 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-
+import net.minecraft.util.Mth;
 
 public class BasiliskModel<T extends BasiliskEntity> extends HierarchicalModel<T> {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = 
-		new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID, "basilisk"), "main");
+	// This layer location should be baked with EntityRendererProvider.Context in
+	// the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
+			ResourceLocation.fromNamespaceAndPath(MyFirstMod.MODID, "basilisk"), "main");
 
 	private final ModelPart chicken;
 	private final ModelPart leg1;
@@ -56,66 +57,104 @@ public class BasiliskModel<T extends BasiliskEntity> extends HierarchicalModel<T
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition chicken = partdefinition.addOrReplaceChild("chicken", CubeListBuilder.create().texOffs(0, 0).addBox(-5.0F, -11.0F, -2.0F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition chicken = partdefinition.addOrReplaceChild("chicken",
+				CubeListBuilder.create().texOffs(0, 0).addBox(-5.0F, -11.0F, -2.0F, 8.0F, 6.0F, 6.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition leg1 = chicken.addOrReplaceChild("leg1", CubeListBuilder.create().texOffs(28, 5).addBox(0.0F, 0.0F, -1.0F, 0.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -5.0F, 0.0F));
+		PartDefinition leg1 = chicken.addOrReplaceChild("leg1", CubeListBuilder.create().texOffs(28, 5).addBox(0.0F,
+				0.0F, -1.0F, 0.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -5.0F, 0.0F));
 
-		PartDefinition foot1 = leg1.addOrReplaceChild("foot1", CubeListBuilder.create().texOffs(11, 18).addBox(-2.0F, 0.0F, 1.0F, 2.0F, 0.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(13, 14).addBox(0.0F, 0.0F, 2.0F, 1.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 5.0F, -3.0F));
+		PartDefinition foot1 = leg1.addOrReplaceChild("foot1",
+				CubeListBuilder.create().texOffs(11, 18)
+						.addBox(-2.0F, 0.0F, 1.0F, 2.0F, 0.0F, 3.0F, new CubeDeformation(0.0F))
+						.texOffs(13, 14).addBox(0.0F, 0.0F, 2.0F, 1.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, 5.0F, -3.0F));
 
-		PartDefinition leg2 = chicken.addOrReplaceChild("leg2", CubeListBuilder.create().texOffs(30, 5).addBox(0.0F, 0.0F, -1.0F, 0.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -5.0F, 3.0F));
+		PartDefinition leg2 = chicken.addOrReplaceChild("leg2", CubeListBuilder.create().texOffs(30, 5).addBox(0.0F,
+				0.0F, -1.0F, 0.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, -5.0F, 3.0F));
 
-		PartDefinition foot2 = leg2.addOrReplaceChild("foot2", CubeListBuilder.create().texOffs(11, 21).addBox(-2.0F, 0.0F, 1.0F, 2.0F, 0.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(13, 15).addBox(0.0F, 0.0F, 2.0F, 1.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 5.0F, -3.0F));
+		PartDefinition foot2 = leg2.addOrReplaceChild("foot2",
+				CubeListBuilder.create().texOffs(11, 21)
+						.addBox(-2.0F, 0.0F, 1.0F, 2.0F, 0.0F, 3.0F, new CubeDeformation(0.0F))
+						.texOffs(13, 15).addBox(0.0F, 0.0F, 2.0F, 1.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, 5.0F, -3.0F));
 
-		PartDefinition wing1 = chicken.addOrReplaceChild("wing1", CubeListBuilder.create().texOffs(22, 0).addBox(-3.0F, 0.0F, -1.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(20, 18).addBox(-2.0F, 4.0F, -1.0F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(22, 12).addBox(-2.0F, 0.0F, -0.001F, 5.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, -11.0F, -2.0F));
+		PartDefinition wing1 = chicken.addOrReplaceChild("wing1",
+				CubeListBuilder.create().texOffs(22, 0)
+						.addBox(-3.0F, 0.0F, -1.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
+						.texOffs(20, 18).addBox(-2.0F, 4.0F, -1.0F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+						.texOffs(22, 12).addBox(-2.0F, 0.0F, -0.001F, 5.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, -11.0F, -2.0F));
 
-		PartDefinition wing2 = chicken.addOrReplaceChild("wing2", CubeListBuilder.create().texOffs(22, 0).addBox(-3.0F, 0.0F, 0.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(20, 18).addBox(-2.0F, 4.0F, 0.0F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(22, 12).addBox(-2.0F, 0.0F, 0.001F, 5.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, -11.0F, 4.0F));
+		PartDefinition wing2 = chicken.addOrReplaceChild("wing2",
+				CubeListBuilder.create().texOffs(22, 0)
+						.addBox(-3.0F, 0.0F, 0.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
+						.texOffs(20, 18).addBox(-2.0F, 4.0F, 0.0F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+						.texOffs(22, 12).addBox(-2.0F, 0.0F, 0.001F, 5.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, -11.0F, 4.0F));
 
-		PartDefinition head = chicken.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -4.0F, -2.0F, 3.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
-		.texOffs(14, 12).addBox(-4.0F, -2.0F, -2.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F))
-		.texOffs(0, 22).addBox(-3.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-5.0F, -11.0F, 1.0F));
+		PartDefinition head = chicken.addOrReplaceChild("head",
+				CubeListBuilder.create().texOffs(0, 12)
+						.addBox(-2.0F, -4.0F, -2.0F, 3.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
+						.texOffs(14, 12).addBox(-4.0F, -2.0F, -2.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F))
+						.texOffs(0, 22).addBox(-3.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-5.0F, -11.0F, 1.0F));
 
-		PartDefinition frill = chicken.addOrReplaceChild("frill", CubeListBuilder.create().texOffs(16, 12).addBox(1.0F, -6.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-		.texOffs(16, 13).addBox(3.0F, -2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-		.texOffs(10, 15).addBox(3.0F, -1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-		.texOffs(28, 0).addBox(1.0F, -5.0F, 0.0F, 2.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-5.0F, -11.0F, 1.0F));
+		PartDefinition frill = chicken.addOrReplaceChild("frill",
+				CubeListBuilder.create().texOffs(16, 12)
+						.addBox(1.0F, -6.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+						.texOffs(16, 13).addBox(3.0F, -2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+						.texOffs(10, 15).addBox(3.0F, -1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+						.texOffs(28, 0).addBox(1.0F, -5.0F, 0.0F, 2.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-5.0F, -11.0F, 1.0F));
 
-		PartDefinition frill_top = frill.addOrReplaceChild("frill_top", CubeListBuilder.create().texOffs(10, 12).addBox(-2.0F, -2.0F, 0.0F, 3.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -4.0F, 0.0F));
+		PartDefinition frill_top = frill.addOrReplaceChild("frill_top", CubeListBuilder.create().texOffs(10, 12).addBox(
+				-2.0F, -2.0F, 0.0F, 3.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -4.0F, 0.0F));
 
-		PartDefinition tail = chicken.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offset(0.0F, 1.0F, 0.0F));
+		PartDefinition tail = chicken.addOrReplaceChild("tail", CubeListBuilder.create(),
+				PartPose.offset(0.0F, 1.0F, 0.0F));
 
-		PartDefinition tail_start = tail.addOrReplaceChild("tail_start", CubeListBuilder.create().texOffs(2, 22).addBox(-1.0F, -2.0F, -2.0F, 3.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
+		PartDefinition tail_start = tail.addOrReplaceChild("tail_start", CubeListBuilder.create().texOffs(2, 22).addBox(
+				-1.0F, -2.0F, -2.0F, 3.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
 
-		PartDefinition tail_middle = tail.addOrReplaceChild("tail_middle", CubeListBuilder.create().texOffs(14, 24).addBox(2.0F, -1.5F, -1.5F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
+		PartDefinition tail_middle = tail.addOrReplaceChild("tail_middle", CubeListBuilder.create().texOffs(14, 24)
+				.addBox(2.0F, -1.5F, -1.5F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(4.0F, -9.0F, 1.0F));
 
-		PartDefinition tail_middle_end = tail.addOrReplaceChild("tail_middle_end", CubeListBuilder.create().texOffs(22, 20).addBox(6.0F, -1.0F, -1.0F, 3.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
+		PartDefinition tail_middle_end = tail.addOrReplaceChild("tail_middle_end", CubeListBuilder.create()
+				.texOffs(22, 20).addBox(6.0F, -1.0F, -1.0F, 3.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(4.0F, -9.0F, 1.0F));
 
-		PartDefinition tail_end = tail.addOrReplaceChild("tail_end", CubeListBuilder.create().texOffs(26, 30).addBox(9.0F, -0.5F, -0.5F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
+		PartDefinition tail_end = tail.addOrReplaceChild("tail_end", CubeListBuilder.create().texOffs(26, 30).addBox(
+				9.0F, -0.5F, -0.5F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, -9.0F, 1.0F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
 	@Override
-    public void setupAnim(BasiliskEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.root().getAllParts().forEach(ModelPart::resetPose);
+	public void setupAnim(BasiliskEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch) {
+		this.root().getAllParts().forEach(ModelPart::resetPose);
+		this.head.zRot = headPitch * 0.017453292F;
+		this.head.yRot = netHeadYaw * 0.017453292F;
+		this.frill.zRot = this.head.zRot;
+		this.frill.yRot = this.head.yRot;
+		this.animateWalk(BasiliskAnimation.walk, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.wing1.xRot = -entity.currentWingRotation;
+		this.wing2.xRot = entity.currentWingRotation;
 
-        this.animateWalk(BasiliskAnimation.walk, limbSwing, limbSwingAmount, 2f, 2.5f);
-        this.animate(entity.idleAnimationState, BasiliskAnimation.look_left, ageInTicks, 1f);
-		this.animate(entity.idleAnimationState, BasiliskAnimation.look_right, ageInTicks, 1f);
+		this.animate(((BasiliskEntity) entity).attackAnimationState, BasiliskAnimation.attack, ageInTicks, 1f);
 	}
 
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        chicken.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
+	@Override
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay,
+			int color) {
+		chicken.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+	}
 
-    @Override
-    public ModelPart root() {
-        return chicken;
-    }
+	@Override
+	public ModelPart root() {
+		return chicken;
+	}
 }

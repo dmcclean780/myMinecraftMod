@@ -21,11 +21,7 @@ public class BasiliskRenderer extends MobRenderer<BasiliskEntity, BasiliskModel<
 
     @Override
     public void render(BasiliskEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        if(entity.isBaby()) {
-            poseStack.scale(0.45f, 0.45f, 0.45f);
-        } else {
-            poseStack.scale(1f, 1f, 1f);
-        }
+        poseStack.scale(1f, 1f, 1f);
 
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }

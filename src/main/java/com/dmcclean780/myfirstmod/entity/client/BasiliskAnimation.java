@@ -84,7 +84,7 @@ public class BasiliskAnimation {
 		))
 		.build();
 
-	public static final AnimationDefinition fly = AnimationDefinition.Builder.withLength(0.7083F)
+	public static final AnimationDefinition fly = AnimationDefinition.Builder.withLength(0.7083F).looping()
 		.addAnimation("wing1", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
 			new Keyframe(0.0F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),
 			new Keyframe(0.25F, KeyframeAnimations.degreeVec(-110.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),
